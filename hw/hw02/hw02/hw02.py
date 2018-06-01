@@ -32,7 +32,11 @@ def product(n, term):
     >>> product(3, triple)    # 1*3 * 2*3 * 3*3
     162
     """
-    "*** YOUR CODE HERE ***"
+    k, product = 1, 1
+    while k <= n:
+        product, k = product * term(k), k + 1
+
+    return product
 
 # The identity function, defined using a lambda expression!
 identity = lambda k: k
@@ -48,7 +52,7 @@ def factorial(n):
     >>> check(HW_SOURCE_FILE, 'factorial', ['Recursion', 'For', 'While'])
     True
     """
-    "*** YOUR CODE HERE ***"
+    return product(n, identity)
 
 def make_adder(n):
     """Return a function that takes an argument K and returns N + K.
@@ -59,5 +63,5 @@ def make_adder(n):
     >>> make_adder(1)(2)
     3
     """
-    "*** YOUR CODE HERE ***"
-    return 'REPLACE ME'
+
+    return lambda k: n + k
