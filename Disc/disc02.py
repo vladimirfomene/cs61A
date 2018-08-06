@@ -58,7 +58,7 @@ def contains(tree, x):
     if label(tree) == x:
         found = True
     else:
-        for b in branches(b):
+        for b in branches(tree):
             contains(b, x)
     return found
 
